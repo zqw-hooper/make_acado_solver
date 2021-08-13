@@ -12,50 +12,7 @@ The file **nmpc_solver_setup.cpp** is what defines the MPC controller and it is 
 
 Prerequests: 
 ------
-
-ACADO toolkit needs to be properly installed. Follow the instructions here: http://acado.github.io/install_linux.html
-
-* In your **~/.bashrc** add the line:`source [pathToAcado]/ACADOtoolkit/build/acado_env.sh`. Remember to *source* ~/.bashrc,
-```sh
-source ~/.bashrc
-```
-
-
-* Build/Install. From this folder do:
-```sh
-cd [yourDirectory]/make_acado_solver
-mkdir build
-cd build
-cmake ..
-make
-```
-
-* The executable file is now placed in the folder ../solver. Execute it by running the following commands:
-```sh
-cd ../solver
-./nmpc_solver_setup
-```
-
-Then the controller is generated on **solver/OCPexport** folder.
-* Copy your controller to your project, i.e.
-```sh
-cp -r ./OCPexport/ ../test/solver/
-```
-
-* There is an example of how to use the generated controller on test folder. 
-```sh
-cd ../test
-mkdir build
-cd build
-cmake ..
-make
-./main
-```
-
-
-
-
-# 中文简单讲解
+## Build 
 * 下载安装acado, http://acado.github.io/install_linux.html.
 
 * 增加环境变量，在 **~/.bashrc** 增加一句
@@ -97,5 +54,6 @@ make
 ```
 每次改动求解器后，要记得删除./test/solver/OCPexport，将新的./solver/OCPexport文件夹替换原来的文件夹
 
+## Example 
 
-
+[推车实例](http://docs.ros.org/en/indigo/api/acado/html/cgt_getting_started.html)
